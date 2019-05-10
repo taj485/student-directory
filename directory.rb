@@ -1,6 +1,5 @@
 #first we print the list of students
 students = [
- "-------------",
  "Dr. Hannibal Lecter",
  "Darth Vader",
  "Nurse Ratched",
@@ -14,11 +13,22 @@ students = [
  "Norman Bates"
 ]
 # and then print them
-puts "The students of Villains Academy"
+def print_header
+  puts "The students of Villains Academy"
+  puts "-------------"
+end
 
-students.each do |student|
-  puts students
+def print(names)
+  names.each do |names|
+    puts names
+  end
 end
 
 #finally, we print the total number of students
-print "Overall, we have #{students.count} great students"
+def print_footer(names)
+  puts "Overall, we have #{names.count} great students"
+end
+
+print_header
+print(students)
+print_footer(students)
