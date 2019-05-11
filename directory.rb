@@ -40,6 +40,23 @@ def print(students)
     index += 1
     puts "#{index} #{student[:name]} #{student[:cohort]} cohort"
   end
+
+puts 'select letter to display all students begining with that letter'
+letter = gets.chomp
+  students.each do |student|
+    if student[:name].start_with?(letter)
+      puts "all students beginging with the letter #{letter}: #{student[:name]}"
+    end
+    end
+  end
+
+def show12(students)
+  puts "name of students who have less then 12 charcters in their name :"
+  students.select do |student|
+    if student[:name].length < 12
+      puts student[:name]
+    end
+  end
 end
 
 #finally, we print the total number of students
@@ -51,4 +68,5 @@ end
 print_header
 students = input_students
 print(students)
+show12(students)
 print_footer(students)
